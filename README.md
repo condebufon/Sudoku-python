@@ -36,7 +36,7 @@ Windows 10, 11.
 * La posibilidad de verificar si la solución es correcta o no 
 * La capacidad de guardar y cargar partidas
 
-## 🧐 Requisitos funcionales <a name = "requisito_2"></a>
+## 🧐 Requisitos no funcionales <a name = "requisito_2"></a>
 Estos requisitos describen cómo debe funcionar el sistema. En este caso, los requisitos no funcionales incluyen: 
 
 * El sistema debe ser implementado en un lenguaje de programación de elección del estudiante.
