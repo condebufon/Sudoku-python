@@ -58,5 +58,5 @@ El proyecto se puede dividir en las siguientes fases:
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@condebufon](https>//github.com/condebufon) - modificaciones e interpretaciones
-- - [@ctrljason](https>//github.com/ctrljason) - modificaciones e interpretaciones
+- [@ctrljason](https>//github.com/ctrljason) - modificaciones e interpretaciones
 - [@dmalon](https>//github.com/dmalon) - modificaciones e interpretaciones
