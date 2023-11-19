@@ -92,7 +92,59 @@ def print_board(tablero):
 
   print(bar)
 
+def menu(tablero):
+  print("\nSeleccione una opción:")
+  print("1. Continuar remplazando casillas")
+  print("2. Verificar el Sudoku")
+  print("3. Salir")
 
+  opcion = int(input("Ingrese el número correspondiente a la opción: "))
+
+  if opcion == 1:
+      tablero = set_valor(tablero)
+      print_board(tablero)
+      menu(tablero)
+  elif opcion == 2:
+      # codigo para verificar
+      if validar_sudoku(tablero):
+          print("El Sudoku es válido. ¡Felicidades!")
+      else:
+          print("El Sudoku no es válido. Inténtalo de nuevo.")
+      menu(tablero)
+  elif opcion == 3:
+      print("Saliendo del programa.")
+  else:
+      print("Opción inválida. Intente nuevamente.")
+      menu(tablero)
+
+
+def validar_sudoku(tablero):
+  for i in range(len(tablero)):
+      for j in range(len(tablero[i])):
+          if tablero[i][j] == 0:  # Verificar si el valor es cero
+              return False
+          # Validar fila
+          for k in range(len(tablero[i])):
+              if k != j and tablero[i][k] == tablero[i][j]:
+                  return False
+          # Validar columna
+          for k in range(len(tablero)):
+              if k != i and tablero[k][j] == tablero[i][j]:
+                  return False
+          # Validar bloque
+          bloque_i = (i // 3) * 3
+          bloque_j = (j // 3) * 3
+          for m in range(bloque_i, bloque_i + 3):
+              for n in range(bloque_j, bloque_j + 3):
+                  if m != i and n != j and tablero[m][n] == tablero[i][j]:
+                      return False
+  return True
+
+
+def validar_fila(nums):
+  nums = [num for num in nums if num != 0]  # Eliminar ceros
+  return len(nums) == len(set(nums))
+    
 #Solicitar al usuario los valores de m y n
 m = int(input("Ingrese el número de filas (múltiplos de 3): \n"))
 n = int(input("Ingrese el número de columnas (múltiplos de 3): \n"))
@@ -108,3 +160,5 @@ tablero = init(m, n, nivel_dificultad)
 print_board(tablero)
 set_valor(tablero)
 print_board(tablero)
+menu(tablero)
+
