@@ -7,7 +7,9 @@
 <h1 align="center">Clase de Estructuras de Datos</h1>
 <h3 align="center">Profesor: <a href="https://github.com/JuanS3">Sebastián Martínez</a></h3>
 
-<h3 align="center">Alumno: <a href="https://github.com/condebufon">Andres Javier Martínez</a></h3>
+<h3 align="center">Alumno: <a href="https://github.com/condebufon">Andres javier martinez</a></h3>
+<h3 align="center">Alumno: <a href="https://github.com/Ctrljason">yeison mosquera murillo</a></h3>
+<h3 align="center">Alumno: <a href="https://github.com/dmalagon">david malagon Garcia</a></h3>
 
 
 
@@ -34,13 +36,12 @@ Windows 10, 11.
 * Fácil de aprender, con una curva de aprendizaje suave, tambien Diferentes niveles de dificultad para adaptarse a las habilidades del jugador
 * La capacidad de marcar o borrar números en las casillas, capacidad de mostrar solo números posibles
 * La posibilidad de verificar si la solución es correcta o no 
-* La capacidad de guardar y cargar partidas
+
 
 ## 🧐 Requisitos no funcionales <a name = "requisito_2"></a>
 Estos requisitos describen cómo debe funcionar el sistema. En este caso, los requisitos no funcionales incluyen: 
 
 * El sistema debe ser implementado en un lenguaje de programación de elección del estudiante.
-* El código debe estar documentado.
 * El proyecto debe ser entregado en un plazo de 2-3 semanas.
 
 ## 🏁 Fases del desarrollo <a name = "desarrollo"></a>
@@ -57,3 +58,5 @@ El proyecto se puede dividir en las siguientes fases:
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@condebufon](https>//github.com/condebufon) - modificaciones e interpretaciones
+- - [@ctrljason](https>//github.com/ctrljason) - modificaciones e interpretaciones
+- [@dmalon](https>//github.com/dmalon) - modificaciones e interpretaciones
