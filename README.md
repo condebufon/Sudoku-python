@@ -9,7 +9,7 @@
 
 <h3 align="center">Alumno: <a href="https://github.com/condebufon">Andres javier martinez</a></h3>
 <h3 align="center">Alumno: <a href="https://github.com/Ctrljason">yeison mosquera murillo</a></h3>
-<h3 align="center">Alumno: <a href="https://github.com/dmalagon">david malagon Garcia</a></h3>
+<h3 align="center">Alumno: <a href="https://github.com/DAVIDMALAGON23">david malagon Garcia</a></h3>
 
 
 
@@ -59,4 +59,4 @@ El proyecto se puede dividir en las siguientes fases:
 
 - [@condebufon](https>//github.com/condebufon) - modificaciones e interpretaciones
 - [@ctrljason](https>//github.com/ctrljason) - modificaciones e interpretaciones
-- [@dmalon](https>//github.com/dmalon) - modificaciones e interpretaciones
+- [@dmalon](https>//github.com/DAVIDMALAGON23) - modificaciones e interpretaciones
