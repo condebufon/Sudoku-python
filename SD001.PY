@@ -1,5 +1,7 @@
 import string
 import random
+from pila import Pila
+from copy import deepcopy
 
 # Definición de la función para inicializar el tablero. Esta función crea un tablero vacío y llena cada celda con un número aleatorio.
 
@@ -48,23 +50,26 @@ def seleccionar_dificultad():
     return nivel
 
 #Definición de la función para póder remplaza casillas por filas y columnas
-def set_valor(tablero):
+def set_valor(tablero, pila_deshacer):
+  pila_deshacer.apilar(deepcopy(tablero))
+ 
+  
   f = -1
-  while f < 0 or f > 9:
+  while f < 0 or f > len(tablero):
       letra = input("Ingrese la letra de la fila: \n")
       f = ord(letra.upper()) - ord('A')
 
   c = -1
-  while c < 0 or c > 9:
+  while c < 0 or c > len(tablero[0]):
       c = int(input("Ingrese el número de la columna: \n"))
 
   v = -1
-  while v < 0 or v > 9:
+  while v < 0 or v > (len(tablero)*len(tablero[0])) :
       v = int(input("Ingrese el número de su selección: \n"))
 
   tablero[f][c] = v
-
-  return tablero
+  
+  return tablero, pila_deshacer
 
 #Definición de la función para imprimir el tablero. Esta función muestra visualmente el tablero en la consola.
 
@@ -92,30 +97,41 @@ def print_board(tablero):
 
   print(bar)
 
-def menu(tablero):
+def menu(tablero, pila_deshacer):
   print("\nSeleccione una opción:")
   print("1. Continuar remplazando casillas")
   print("2. Verificar el Sudoku")
-  print("3. Salir")
-
+  print("3. deshacer última acción")
+  print("4. Salir")
+  
   opcion = int(input("Ingrese el número correspondiente a la opción: "))
 
   if opcion == 1:
-      tablero = set_valor(tablero)
+      tablero, pila_deshacer = set_valor(tablero, pila_deshacer)
       print_board(tablero)
-      menu(tablero)
+      menu(tablero, pila_deshacer)
   elif opcion == 2:
       # codigo para verificar
       if validar_sudoku(tablero):
           print("El Sudoku es válido. ¡Felicidades!")
       else:
           print("El Sudoku no es válido. Inténtalo de nuevo.")
-      menu(tablero)
-  elif opcion == 3:
+      menu(tablero, pila_deshacer)
+  elif opcion == 3: 
+      if pila_deshacer.puede_desapilar():
+         tablero=pila_deshacer.desapilar()
+         print("Acción deshecha exitosamente.")
+      else:
+            print("No hay acciones para deshacer.")
+      print_board(tablero)
+      menu(tablero, pila_deshacer)
+      
+  elif opcion == 4:
+      print("Gracias por jugar. ¡Hasta la próxima!")
       print("Saliendo del programa.")
   else:
       print("Opción inválida. Intente nuevamente.")
-      menu(tablero)
+      menu(tablero, pila_deshacer)
 
 
 def validar_sudoku(tablero):
@@ -157,8 +173,10 @@ nivel_dificultad = seleccionar_dificultad()
 # Llamada a la función para inicializar el tablero con el nivel de dificultad seleccionado
 tablero = init(m, n, nivel_dificultad)
 # Llamada a la función para imprimir el tablero
+pila_deshacer = Pila()
+
 print_board(tablero)
-set_valor(tablero)
+tablero, pila_deshacer= set_valor(tablero, pila_deshacer)
 print_board(tablero)
-menu(tablero)
+menu(tablero, pila_deshacer)
 
